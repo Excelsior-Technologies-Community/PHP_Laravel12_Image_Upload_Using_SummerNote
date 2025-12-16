@@ -19,17 +19,10 @@ Creates a fresh Laravel 12 project with default configuration.
 # Now Setup Database structure for .env file
 ```
 DB_CONNECTION=mysql
-
-
 DB_HOST=127.0.0.1
-
-
 DB_PORT=3306
-
 DB_DATABASE=your databse name
-
 DB_USERNAME=root
-
 DB_PASSWORD=
 ```
 
