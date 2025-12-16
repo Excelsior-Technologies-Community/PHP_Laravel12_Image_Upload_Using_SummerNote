@@ -16,6 +16,23 @@ composer create-project laravel/laravel example-app
 Explanation:  
 Creates a fresh Laravel 12 project with default configuration.
 
+# Now Setup Database structure for .env file
+```
+DB_CONNECTION=mysql
+
+
+DB_HOST=127.0.0.1
+
+
+DB_PORT=3306
+
+DB_DATABASE=your databse name
+
+DB_USERNAME=root
+
+DB_PASSWORD=
+```
+
 ---
 
 ## Step 2: Create Posts Table and Model
@@ -74,7 +91,9 @@ php artisan migrate
 ---
 
 ### Create Post Model
-
+```
+php artisan make:Model Post
+```
 `app/Models/Post.php`
 
 ```php
@@ -190,8 +209,8 @@ This model automatically converts base64 images pasted in Summernote into real i
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
-Route::get('posts/create',[PostController::class,'create']);
-Route::post('posts/store',[PostController::class,'store'])->name('posts.store');
+Route::get('posts/create',[PostController::class,'create']);//create now
+Route::post('posts/store',[PostController::class,'store'])->name('posts.store');//all data store 
 
 Route::get('/', function () {
     return view('welcome');
@@ -201,6 +220,9 @@ Route::get('/', function () {
 ---
 
 ## Step 4: Create Controller
+```
+php artisan make:controller PostController
+```
 
 `app/Http/Controllers/PostController.php`
 
